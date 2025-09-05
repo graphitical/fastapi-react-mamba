@@ -9,17 +9,17 @@ project to test locally. Do this from outside of the root directory to avoid
 accidentally commiting test builds. For example:
 
 ```bash
-./fastapi-react/scripts/dev-project.sh
+./fastapi-react-mamba/scripts/dev-project.sh
 ```
 
-This will then create a `dev-fastapi-react` directory.
+This will then create a `dev-fastapi-react-mamba` directory.
 
 ```bash
-cd dev-fastapi-react
+cd dev-fastapi-react-mamba
 docker-compose up -d
 ```
 
-When developing locally, there is also a helper script that will create a cookiecutter directory, build containers, and run tests all from within the root project directory. This can be kind of a tedious process with cookiecutter so this makes it somewhat less painful. From the root `fastapi-react` directory, simply run:
+When developing locally, there is also a helper script that will create a cookiecutter directory, build containers, and run tests all from within the root project directory. This can be kind of a tedious process with cookiecutter so this makes it somewhat less painful. From the root `fastapi-react-mamba` directory, simply run:
 
 ```bash
 ./scripts/test_local.sh

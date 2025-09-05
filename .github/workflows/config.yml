@@ -12,14 +12,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+      - name: Set up Mamba
+        uses: conda-incubator/setup-miniconda@v2
         with:
+          auto-update-conda: true
           python-version: 3.8
+          mamba-version: "*"
+          channels: conda-forge
       - name: Install dependencies
         run: |
-          sudo python -m pip install --upgrade pip
-          sudo pip install cookiecutter
+          mamba env create -f {{cookiecutter.project_slug}}/backend/environment.yml
       - name: Prettify code
         uses: creyD/prettier_action@v2.2
         with:
@@ -29,5 +31,7 @@ jobs:
         with:
           args: '{{cookiecutter.project_slug}}/backend --check --line-length 79'
       - name: Run tests
+        shell: bash -l {0}
         run: |
+          conda activate {{cookiecutter.project_slug}}
           sudo ./scripts/test.sh

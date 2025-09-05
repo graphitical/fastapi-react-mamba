@@ -30,7 +30,7 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    command: celery --app app.tasks worker --loglevel=DEBUG -Q main-queue -c 1
+    command: micromamba run -n base celery --app app.tasks worker --loglevel=DEBUG -Q main-queue -c 1
 
   flower:  
     image: mher/flower
@@ -44,7 +44,7 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    command: python app/main.py
+    command: micromamba run -n base python app/main.py
     tty: true
     volumes:
       - ./backend:/app/:cached

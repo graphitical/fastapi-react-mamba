@@ -1,0 +1,26 @@
+name: base
+channels: [conda-forge]
+channel_priority: strict
+dependencies:
+  - python=3.11
+  - alembic
+  - authlib
+  - fastapi
+  - celery
+  - httpx
+  - ipython
+  - itsdangerous
+  - jinja2
+  - psycopg2
+  - pytest
+  - requests
+  - sqlalchemy
+  - uvicorn
+  - passlib
+  - sqlalchemy-utils
+  - python-multipart
+  - pyjwt
+  - pythonocc-core
+  - flower
+  - redis-py
+  - bcrypt
