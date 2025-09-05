@@ -48,31 +48,34 @@ modern stack.
 
 ## Table of Contents
 
-- [Background](#background)
-- [Quick Start](#quick-start)
-- [Develop](#develop)
-- [Admin Dashboard](#admin-dashboard)
-- [Security](#security)
-- [Testing](#testing)
-  - [Fixtures](#fixtures)
-    - [test_db](#test_db)
-    - [test_user](#test_user)
-    - [test_superuser](#test_superuser)
-    - [client](#client)
-    - [user_token_headers](#user_token_headers)
-    - [superuser_token_headers](#superuser_token_headers)
-- [Background Tasks](#background-tasks)
-  - [Flower](#flower)
-- [Frontend Utilities](#frontend-utilities)
-  - [Utility Functions](#utility-functions)
-    - [login](#login)
-    - [logout](#logout)
-    - [isAuthenticated](#isauthenticated)
-  - [Routes](#routes)
-  - [Higher Order Components](#higher-order-components)
-    - [PrivateRoute](#privateroute)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
+- [FastAPI + React ·   ](#fastapi--react----)
+  - [Features](#features)
+  - [Table of Contents](#table-of-contents)
+  - [Background](#background)
+  - [Quick Start](#quick-start)
+  - [Develop](#develop)
+  - [Admin Dashboard](#admin-dashboard)
+  - [Security](#security)
+  - [Testing](#testing)
+    - [Fixtures](#fixtures)
+      - [test\_db](#test_db)
+      - [test\_user](#test_user)
+      - [test\_superuser](#test_superuser)
+      - [client](#client)
+      - [user\_token\_headers](#user_token_headers)
+      - [superuser\_token\_headers](#superuser_token_headers)
+  - [Background Tasks](#background-tasks)
+    - [Flower](#flower)
+  - [Frontend Utilities](#frontend-utilities)
+    - [Utility Functions](#utility-functions)
+      - [login](#login)
+      - [logout](#logout)
+      - [isAuthenticated](#isauthenticated)
+    - [Routes](#routes)
+    - [Higher Order Components](#higher-order-components)
+      - [PrivateRoute](#privateroute)
+  - [Deployment](#deployment)
+  - [Contributing](#contributing)
 
 ## Background
 
@@ -80,22 +83,20 @@ It is often laborsome to start a new project. 90% of the time you have to decide
 how to handle authentication, reverse proxies, docker containers, testing,
 server-side validation, linting, etc. before you can even get started.
 
-**FastAPI-React** serves to streamline and give you that functionality out of
-the box.
-
-It is meant as a lightweight/React alternative to [FastAPI's official fullstack
-project](https://github.com/tiangolo/full-stack-fastapi-postgresql). If you want
-a more comprehensive project in Vue, I would suggest you start there. A lot of
-the backend code is taken from that project or the [FastAPI official
-docs](https://fastapi.tiangolo.com/).
+**FastAPI-React-Mamba** serves to streamline and give you that functionality out of
+the box and give the benefit of using Mamba as a package manager.
+This is a fork of the [fastapi-react cookiecutter template](https://github.com/Buuntu/fastapi-react). More specific information can be found there.
 
 ## Quick Start
 
-First, install cookiecutter if you don't already have it:
+First, install cookiecutter if you don't already have it. 
+Using [pipx](https://pipx.pypa.io/stable/):
 
 ```bash
-pip3 install cookiecutter
+pipx install cookiecutter # or replace conda with mamba
 ```
+
+Any other alternatives to install cookiecutter are fine such as pip3, mamba, etc. but it may change how `cookiecutter` needs to be called.
 
 Second, install docker-compose if you don't already have it:
 
@@ -105,7 +106,7 @@ docs](https://docs.docker.com/compose/install/).
 Then, in the directory you want your project to live:
 
 ```bash
-cookiecutter gh:Buuntu/fastapi-react
+cookiecutter gh:graphitical/fastapi-react-mamba
 ```
 
 You will need to put in a few variables and it will create a project directory
