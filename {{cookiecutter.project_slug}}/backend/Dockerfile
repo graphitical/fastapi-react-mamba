@@ -11,4 +11,4 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER . /app
 
 EXPOSE 8000 5678
 
-CMD ["micromamba", "run", "-n", "base", "python", "app/main.py"]
+CMD ["python", "app/main.py"]
