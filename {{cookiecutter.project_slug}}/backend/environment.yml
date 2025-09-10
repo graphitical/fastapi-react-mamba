@@ -22,5 +22,6 @@ dependencies:
   - pyjwt
   - flower
   - redis-py
+  - trimesh
   - pythonocc-core
   - bcrypt=4.0.1
