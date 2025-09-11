@@ -22,7 +22,19 @@ docker-compose down -v --remove-orphans
 
 # only remove directory if running locally
 if [[ -z "$CIRCLE_CI_ENV" ]]; then
-    echo "empty"
+    echo "Cleaning up generated project locally..."
     cd ..
-    rm -rf testing-project
+    # Try local removal first; if it fails (e.g., due to root-owned files from Docker), fallback to containerized cleanup.
+    if rm -rf testing-project 2>/dev/null; then
+        echo "Removed testing-project"
+    else
+        echo "Local removal failed; retrying with Docker as root..."
+        # Mount the parent directory and remove the folder from within a root container to avoid sudo.
+        docker run --rm -v "$PWD":/host busybox sh -c 'rm -rf /host/testing-project' || true
+        if [[ -d testing-project ]]; then
+            echo "Warning: testing-project still exists. You may need to run: sudo rm -rf testing-project"
+        else
+            echo "Removed testing-project via Docker"
+        fi
+    fi
 fi
