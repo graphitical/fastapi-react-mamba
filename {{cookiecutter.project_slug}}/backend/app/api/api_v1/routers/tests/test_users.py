@@ -10,6 +10,8 @@ def test_get_users(client, test_superuser, superuser_token_headers):
             "email": test_superuser.email,
             "is_active": test_superuser.is_active,
             "is_superuser": test_superuser.is_superuser,
+            "first_name": "",
+            "last_name": ""
         }
     ]
 
@@ -77,6 +79,8 @@ def test_get_user(
         "email": test_user.email,
         "is_active": bool(test_user.is_active),
         "is_superuser": test_user.is_superuser,
+        "first_name": "",
+        "last_name": ""
     }
 
 
