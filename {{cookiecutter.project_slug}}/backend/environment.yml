@@ -24,4 +24,5 @@ dependencies:
   - redis-py
   - trimesh
   - pythonocc-core
+  - open3d
   - bcrypt=4.0.1
